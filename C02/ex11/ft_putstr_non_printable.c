@@ -6,7 +6,7 @@
 /*   By: oelfarsa <oelfarsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 01:22:54 by oelfarsa          #+#    #+#             */
-/*   Updated: 2025/07/22 03:35:43 by oelfarsa         ###   ########.fr       */
+/*   Updated: 2025/07/26 14:12:49 by oelfarsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putchar(char c)
 
 void	hex(unsigned char c)
 {
-	unsigned char	*hex;
+	char	*hex;
 
 	hex = "0123456789abcdef";
 	ft_putchar('\\');
@@ -34,10 +34,10 @@ void	ft_putstr_non_printable(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] < 32 || str[i] > 126)
-			hex(str[i]);
-		else
+		if (str[i] >= 32 && str[i] <= 126)
 			ft_putchar(str[i]);
+		else
+			hex(str[i]);
 		i++;
 	}
 }

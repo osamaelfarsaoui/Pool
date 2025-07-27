@@ -6,7 +6,7 @@
 /*   By: oelfarsa <oelfarsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 08:39:16 by oelfarsa          #+#    #+#             */
-/*   Updated: 2025/07/22 00:57:32 by oelfarsa         ###   ########.fr       */
+/*   Updated: 2025/07/22 22:14:56 by oelfarsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ char	*ft_strcapitalize(char *str)
 			up = 1;
 		i++;
 	}
+	return (str);
 }
