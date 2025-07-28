@@ -20,8 +20,8 @@ int	ft_atoi(char *str)
 	int i;
 	int	result;
 	int sign;
-
-    i = 0;
+	
+	i = 0;
 	result = 0;
 	sign = 1;
 	while ((str[i] >= '\t' && str[i] <= '\r') || (str[i] == ' '))
