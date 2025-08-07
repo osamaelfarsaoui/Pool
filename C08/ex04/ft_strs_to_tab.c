@@ -6,11 +6,12 @@
 /*   By: oelfarsa <oelfarsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 20:22:01 by oelfarsa          #+#    #+#             */
-/*   Updated: 2025/08/06 08:12:55 by oelfarsa         ###   ########.fr       */
+/*   Updated: 2025/08/06 13:24:51 by oelfarsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "ft_stock_str.h"
 
 int	ft_strlen(char *str)
 {
@@ -54,13 +55,6 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 		tab[i].size = ft_strlen(av[i]);
 		tab[i].str = av[i];
 		tab[i].copy = ft_strdup(av[i]);
-		if (!tab[i].copy)
-		{
-			while (--i >= 0)
-				free(tab[i].copy);
-			free(tab);
-			return (NULL);
-		}
 		i++;
 	}
 	tab[i].str = 0;

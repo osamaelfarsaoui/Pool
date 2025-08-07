@@ -6,12 +6,12 @@
 /*   By: oelfarsa <oelfarsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 01:25:32 by oelfarsa          #+#    #+#             */
-/*   Updated: 2025/08/06 07:59:15 by oelfarsa         ###   ########.fr       */
+/*   Updated: 2025/08/06 13:26:54 by oelfarsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdlib.h>
+#include "ft_stock_str.h"
 
 void	ft_putchar(char c)
 {
