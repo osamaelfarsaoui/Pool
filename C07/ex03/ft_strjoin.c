@@ -6,7 +6,7 @@
 /*   By: oelfarsa <oelfarsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 20:23:35 by oelfarsa          #+#    #+#             */
-/*   Updated: 2025/08/07 16:03:34 by oelfarsa         ###   ########.fr       */
+/*   Updated: 2025/08/08 01:47:20 by oelfarsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,37 +49,10 @@ char	*ft_empty(void)
 	return (result);
 }
 
-int	ft_total(int size, char **strs, char *sep)
+void	ft_join(int size, char **strs, char *sep, char *result)
 {
 	int	i;
-	int	total_len;
 
-	i = 0;
-	total_len = 0;
-	while (i < size)
-	{
-		total_len += ft_strlen(strs[i]);
-		i++;
-	}
-	if (size > 1)
-	{
-		total_len += ft_strlen(sep) * (size - 1);
-	}
-	return (total_len);
-}
-
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	int		i;
-	int		total_len;
-	char	*result;
-
-	if (size == 0)
-		return (ft_empty());
-	total_len = ft_total(size, strs, sep);
-	result = malloc(total_len + 1);
-	if (!result)
-		return (NULL);
 	i = 0;
 	while (i < size)
 	{
@@ -88,22 +61,24 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 			ft_strcat(result, sep);
 		i++;
 	}
+}
+
+char	*ft_strjoin(int size, char **strs, char *sep)
+{
+	int		i;
+	int		total_len;
+	char	*result;
+
+	total_len = 0;
+	if (size <= 0)
+		return (ft_empty());
+	i = 0;
+	while (i < size)
+		total_len += ft_strlen(strs[i++]);
+	result = malloc((total_len + ft_strlen(sep) * (size - 1) + 1));
+	if (!result)
+		return (NULL);
+	result[0] = '\0';
+	ft_join(size, strs, sep, result);
 	return (result);
 }
-/*
-#include <stdio.h>
-
-int main(void)
-{
-	char *arr[] = {"apah", "", "completed"};
-	int size = 1;
-	char *sep = "7";
-	char *joined = ft_strjoin(size, arr, sep);
-	if (joined)
-	{
-		printf("%s\n", joined);
-		free(joined);
-	}
-	return (0);
-}
-*/

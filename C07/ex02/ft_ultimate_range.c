@@ -6,7 +6,7 @@
 /*   By: oelfarsa <oelfarsa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 02:10:12 by oelfarsa          #+#    #+#             */
-/*   Updated: 2025/08/05 20:18:02 by oelfarsa         ###   ########.fr       */
+/*   Updated: 2025/08/07 20:56:46 by oelfarsa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_ultimate_range(int **range, int min, int max)
 {
-    int	i;
-	int len;
+	int	i;
+	int	len;
 
 	if (min >= max)
 	{
@@ -23,7 +23,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 		return (0);
 	}
 	len = max - min;
-	*range = (int *)malloc(len * sizeof(int));
+	*range = malloc(len * sizeof(int));
 	if (!*range)
 		return (-1);
 	i = 0;
