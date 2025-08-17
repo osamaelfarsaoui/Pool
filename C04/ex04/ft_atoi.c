@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	space(char  c)
-{
-
-}
-
 int	ft_atoi(char *str)
 {
 	int i;
@@ -40,10 +35,12 @@ int	ft_atoi(char *str)
 	return (result * sign);
 }
 
+/*
 #include <stdio.h>
 #include <stdlib.h>
 int main()
 {
-	printf("%d\n", ft_atoi("+222"));
+	printf("%d\n", ft_atoi("-222"));
 	printf("%d", atoi("-222"));
 }
+*/
